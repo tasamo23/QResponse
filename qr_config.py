@@ -1,4 +1,4 @@
-class QRCode:
+class QRConfig:
 
     Sizes = {
         1 : {width:21,height:21}
@@ -15,6 +15,7 @@ class QRCode:
     
     def __init__(self):
         self.data=""
+        self.modules=[];
         self.dataType=""
         self.color=""
         self.colorType="solid"

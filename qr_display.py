@@ -1,5 +1,6 @@
 from Tkinter import *
 from Tkinter import ttk as toolkit
+from PIL import Image
 
 def initialize():
 
