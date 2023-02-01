@@ -1,22 +1,33 @@
 import json
 
-#JSON
+# JSON
+
+
 def asJSON():
-    return ""; #Return the file
+    pass  # Return the file
 
-#PNG
+# PNG
+
+
 def asPNG():
-    return ""; #Return the file
+    pass  # Return the file
 
-#SVG
+# SVG
+
+
 def asSVG():
-    return ""; #Return the file
-    
-#ASCII
+    pass  # Return the file
+
+# ASCII
+
+
 def asText():
-    return ""; #Return as string
+    pass  # Return as string
+
 
 def saveFile(file):
+    pass
+
 
 def copyToClipboard(exportObj):
-
+    pass

@@ -1,24 +1,25 @@
-from Tkinter import *
-from Tkinter import ttk as toolkit
+import tkinter as tk
+from tkinter import ttk as toolkit
 from PIL import Image
+
 
 def initialize():
 
-    #Console
+    # Console
     print("===========================================================================")
     print("Welcome to QResponse! Here you can create a QR code tailored to your needs!")
     print("===========================================================================")
-    
-    #GUI?
 
-def loadWindowFromConfig(config):
+    # GUI?
 
-    window = Tk();
-    frame = ttk.Frame(padding = 10);
-    frame.grid();
+
+
+def loadImageWindowFromConfig(config):
+
+    window = tk.Tk()
+    frame = toolkit.Frame(padding=10)
+    frame.grid()
+
 
 def summariseConfig(config):
-
-
-
-    
+    pass
