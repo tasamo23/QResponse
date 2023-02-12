@@ -20,21 +20,40 @@ class QRCode:
         return (version - 1) * 4 + 21
 
     def __init__(self, config):
-        self.img = Image.new("L", (21, 21))
+        self.size=self.computeSize(config.version)
+        self.img = Image.new("L", (self.size,self.size))
         self.pixelArr = []
         self.pixelScale = 10
         self.color = {
             "type": (QRCode.Color_types[0], QRCode.Color_bands[0]),
-            "foreground": "",
-            "background": "",
+            "foreground": 0,
+            "background": 1,
         }
         self.config = config
         self.decorations = []
 
-    def insertStaticMarkers(self):
-        # Insert the locator patterns and markers into the pixelarray
+        self.pixelArr=[[] for x in range(0,self.size)]
 
-        pass
+
+    #White is 0
+
+    Static_marker=Image.new("1",(7,7)).putdata([
+        1,1,1,1,1,1,1,
+        1,0,0,0,0,0,1,
+        1,0,1,1,1,0,1,
+        1,0,1,1,1,0,1,
+        1,0,1,1,1,0,1,
+        1,0,0,0,0,0,1,
+        1,1,1,1,1,1,1
+    ])
+
+    Locator=Image.new("1",(5,5)).putdata([
+        1,1,1,1,1,
+        1,0,0,0,1,
+        1,0,1,0,1,
+        1,0,0,0,1,
+        1,1,1,1,1,
+    ])
 
     def insertMetaData(self):
         # Insert version, ECC mode and pattern data into the pixelarray
@@ -51,24 +70,45 @@ class QRCode:
 
     def generateImage(self):
         # Translate the pixelarray into an image
+        self.img.putdata(tuple(self.pixelArr))
         pass
+
+    def insertStaticMarkers(self):
+        # Insert the locator patterns and markers into the pixelarray
+
+        # Static Markers
+        Image.Image.paste(self.img,QRCode.Static_marker,(0,0))
+        Image.Image.paste(self.img,QRCode.Static_marker,(self.img.size[0]-7,0))
+        Image.Image.paste(self.img,QRCode.Static_marker,(0,self.img.size[1]-7))
+
+        # Locators
+
+
+        # Timing Patterns
+
+        for i in range(8,self.img.size[0])
+
+        # pass
 
     def scale(self):
-        # Scale all pixels by the corresponding scale variable (not in SVG)
-        pass
+        # Scale all pixels by the corresponding scale variable (except in SVG)
+        self.img=PIL.ImageOps.scale(self.img,self.scale,PIL.Image.NEAREST)
+        # pass
 
     def generate(self):
-        self.insertStaticMarkers()
         self.insertMetaData()
         self.insertData()
         self.chooseAndApplyMask()
         self.generateImage()
+        self.insertStaticMarkers()
         self.scale()
         self.loadImageWindow()
 
     def loadImageWindow(self):
-        window = tk.Tk()
-        frame = toolkit.Frame(padding=10)
-        image = ImageTk.PhotoImage(self.img)
-        toolkit.Label(frame, image=image).pack()
-        frame.grid()
+        # Create a TKinter window and embed the QR Code as an image 
+        self.img.show()
+        # window = tk.Tk()
+        # frame = toolkit.Frame(padding=10)
+        # image = ImageTk.PhotoImage(self.img)
+        # toolkit.Label(frame, image=image).pack()
+        # frame.grid()
