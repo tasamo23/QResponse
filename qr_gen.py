@@ -67,7 +67,7 @@ class QRCode:
 
         # Text or URL
         if format in (0, 1):
-            return Input.data_askPlainText(delay)
+            return Input.data_askPlainText(delay, format)
 
         # Mail
         elif format == 2:

@@ -43,7 +43,7 @@ def data_askFormat(delay: float) -> int:
     return 0 if format == "" else int(format)
 
 
-def data_askPlainText(delay: float) -> str:
+def data_askPlainText(delay: float, format) -> str:
     print("===============================================================================")
     string = None
     while string == "" or string == None:
