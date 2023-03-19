@@ -9,6 +9,8 @@ class Design:
     def __init__(self, type: str = "SOLID", bands: str = BANDS["BLACK_WHITE"], background: tuple[int, ...] = (0,), foreground: tuple[int, ...] = (1,), rotation: int = 0) -> None:
         self.type = type
         self.bands = bands
+
+        # Not supported yet
         if type == "LINEAR_GRADIENT":
             pass
         elif type == "RADIAL_GRADIENT":

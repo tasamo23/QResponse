@@ -79,8 +79,6 @@ def init_lookup_tables(prim=0x11d):
 
 
 def gf_mult_noLUT(x: int, y: int, prim=0, field_charac_full=256, carryless=True):
-    '''Galois Field integer multiplication using Russian Peasant Multiplication algorithm (faster than the standard multiplication + modular reduction).
-    If prim is 0 and carryless=False, then the function produces the result for a standard integers multiplication (no carry-less arithmetics nor modular reduction).'''
     result = 0
     while y:  # while y is above 0
         if y & 1:
