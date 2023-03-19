@@ -1,17 +1,20 @@
-import qr_gen
-import qr_config
-import qr_export as Export
+import sys
+from qr_gen import QRCode
 import interaction as Input
-import qr_display as Display
-
-currentConfiguration = {}
 
 print("\nInitializing...\n")
 
-allCodeConfigurations = Input.loadAllConfigurations()
+# Welcome in the console
+print("===============================================================================")
+print("= Welcome to QResponse! Here you can create a QR code tailored to your needs! =")
+print("===============================================================================\n")
 
-Display.initialize()
+testConfig = QRCode()
 
-program_mode = Input.initPrompt()
+# Todo list:
 
-print(program_mode)
+# Gradient design
+# WIFI functionality
+# vcard functionality
+# event functionality
+# SVG support

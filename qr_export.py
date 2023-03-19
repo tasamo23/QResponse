@@ -1,33 +1,42 @@
 import json
-
-# JSON
-
-
-def asJSON():
-    pass  # Return the file
-
-# PNG
+from PIL import Image
 
 
-def asPNG():
-    pass  # Return the file
+class Exporter:
 
-# SVG
+    def __init__(self, code) -> None:
+        pass
 
+    # JSON
+    def asJSON(self):
+        pass  # Return the file
 
-def asSVG():
-    pass  # Return the file
+    # JPEG
+    def asJPEG(self) -> None:
+        pass  # Return the file
 
-# ASCII
+    # PNG
+    def asPNG(self) -> None:
+        pass  # Return the file
 
+    # SVG
+    def asSVG(self) -> None:
+        pass  # Return the file
 
-def asText():
-    pass  # Return as string
+    # Console
+    def toConsole(self) -> tuple[str]:
+        # Print as colorcoded string
+        return ("",)
 
+    # Text
+    def asString(self) -> str:
+        # Return as series of ASCII box characters
+        return ""
 
-def saveFile(file):
-    pass
+    # File
+    def saveFile(self, file) -> None:
+        pass
 
-
-def copyToClipboard(exportObj):
-    pass
+    # Clipboard
+    def copyToClipboard(self, exportObj):
+        pass

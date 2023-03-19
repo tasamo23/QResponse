@@ -1,38 +1,20 @@
-from qr_gen import QRCode
-import json
+# import json
+# import qr_color as Color
+# from qr_gen import QRCode
+# from qr_export import Exporter
+# # from qr_ecc import ErrorCorrector
 
 
-class QRConfig:
+# class QRConfig:
 
-    Err_corr_lvls = {
-        "LOW": {"percentage": 7, "bits": (0, 1)},
-        "MEDIUM": {"percentage": 15, "bits": (0, 0)},
-        "QUARTERLY": {"percentage": 25, "bits": (1, 1)},
-        "HIGH": {"percentage": 30, "bits": (1, 0)}
-    }
+#     def __init__(self) -> None:
+#         self.code = QRCode(self)
+#         self.exporter = Exporter()
 
-    Data_types = ("URL", "PLAINTEXT", "WIFI", "BINARY", "COORDINATES")
+#     def exportToJSON(self):
+#         pass
 
-    Mask_patterns = [
-        lambda x, y:(y + x) % 2 == 0,
-        lambda x, y:y % 2 == 0,
-        lambda x, y:x % 3 == 0,
-        lambda x, y:(y + x) % 3 == 0,
-        lambda x, y:(y // 2 + x // 3) % 2 == 0,
-        lambda x, y:(y * x) % 2 + (y * x) % 3 == 0,
-        lambda x, y:((y * x) % 3 + y * x) % 2 == 0,
-        lambda x, y:((y * x) % 3 + y + x) % 2 == 0,
-    ]
-
-    def __init__(self, version):
-        self.version = version
-        self.data = {
-            "type": QRConfig.Data_types[1],
-            "value": ""
-        }
-        self.err_corr_mode = QRConfig.Err_corr_lvls["LOW"]
-        self.mask_pattern = 0  # Index of mask pattern
-        self.code = QRCode(self)
-
-    def exportToJSON(self):
-        pass
+#     def __str__(self) -> str:
+#         returnStr = "QR Code Configuration holding the data \n{}"
+#         returnStr.format(self.dataString)
+#         return returnStr
