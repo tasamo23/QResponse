@@ -47,6 +47,8 @@ Select through choosing the appropriate mode in the console.
 * a different window showing the image (using tkinter)
 * ~~animated GIFS (animating gradients)~~ [^1]
 
+[^1]: Not implemented yet.
+
 ## Program execution / How to get started
 
 This program can be executed offline as long as python and all other dependencies are installed.  
@@ -128,5 +130,3 @@ VSCode built-in terminal running the program
 *[Wikipedia site](https://en.wikipedia.org/wiki/QR_code)* Basic information about QR Codes and their history, as well as encoding  
 *[Thonky’s QR Code Tutorial](https://www.thonky.com/qr-code-tutorial/)* as overall information about QR Codes and how to generate them  
 *[Wikiversity article about Reed Solomon Codes](https://en.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders)* for further information about the Reed Solomon Error Correction and it's implementation  
-
-[^1] Not implemented yet
