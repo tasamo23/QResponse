@@ -4,6 +4,9 @@ import qr_color as Color
 
 # All the input prompts put into a separate file for better organisation
 
+# Note! I did not document this file with comments as thoroughly as the other files,
+# because it is mostly just a bunch of input prompts which have to be validated. Nothing too complicated or special
+
 def data_askFormat(delay: float) -> int:
     print("===============================================================================")
 

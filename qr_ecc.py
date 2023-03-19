@@ -117,7 +117,7 @@ class ReedSolomonError(Exception):
 # A table listing the amount of codewords a certain code version requires
 # Calculated with the table "RS block size" https://en.m.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders/Additional_information#RS_block_size
 EC_CODEWORDS_TABLE = (
-    # L, M, Q, H (ec mode)
+    # L, M, Q, H (These are the error correction levels)
     (7, 10, 13, 17),  # Version 1
     (10, 16, 22, 28),  # Version 2
     (15, 26, 36, 44),  # Version 3
@@ -158,5 +158,4 @@ EC_CODEWORDS_TABLE = (
     (660, 1260, 1860, 2220),  # Version 38
     (720, 1316, 1950, 2310),  # Version 39
     (750, 1372, 2040, 2430),  # Version 40
-
 )
