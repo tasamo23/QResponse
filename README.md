@@ -174,7 +174,7 @@ VSCode built-in terminal running the program
 
 ## Dependencies
 
-* [Python 3.7](https://www.python.org/downloads/) (or higher)
+* [Python 3.6](https://www.python.org/downloads/) (or higher)
 * [Pillow](https://pypi.org/project/Pillow/) (PIL fork)
 * Python modules (standard library):  
   * sys (system module)

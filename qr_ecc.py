@@ -1,7 +1,8 @@
-
+from typing import List
 # Below functions are adapted from https://en.m.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders#RS_encoding
 
-def rs_encode_msg(msg_in: list[int], numEccSyms: int):
+
+def rs_encode_msg(msg_in: List[int], numEccSyms: int):
     # Main encoding function (polynomial division in galois field)
 
     # Check that the message is not too long
@@ -96,7 +97,7 @@ def gf_mult_noLUT(x: int, y: int, prim=0, field_charac_full=256, carryless=True)
 init_lookup_tables()
 
 
-def gf_poly_mul(p: list[int], q: list[int]):
+def gf_poly_mul(p: List[int], q: List[int]):
     '''Multiply two polynomials, inside Galois Field'''
 
     # Pre-allocate the result array

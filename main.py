@@ -1,6 +1,4 @@
-import sys
 from qr_gen import QRCode
-import interaction as Input
 
 print("\nInitializing...\n")
 
