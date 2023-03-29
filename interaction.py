@@ -1,4 +1,5 @@
 from time import sleep
+from typing import Tuple,List
 import qr_color as Color
 
 
@@ -137,7 +138,7 @@ def data_askSMS(delay: float) -> str:
     return "SMSTO:{}:{}".format(phoneNum, message)
 
 
-def v_ec_askSize(delay: float, options: list[tuple[int, int]]) -> tuple[int, int]:
+def v_ec_askSize(delay: float, options: List[Tuple[int, int]]) -> Tuple[int, int]:
     print("===============================================================================")
     size = None
     # While the user input is not valid

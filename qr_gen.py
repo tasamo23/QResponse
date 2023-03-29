@@ -7,6 +7,7 @@ import string
 import qr_color as Color
 import tkinter.filedialog as tkFd
 import interaction as Input
+from typing import Tuple,List
 from tkinter import ttk as toolkit
 from PIL import Image, ImageOps, ImageChops, ImageTk
 
@@ -79,7 +80,7 @@ class QRCode:
 
         return "DEFAULT"
 
-    def determineVAndEC(self) -> tuple[int, int]:
+    def determineVAndEC(self) -> Tuple[int, int]:
         # Determine the version and error correction level of the code based on user selection
         options = []
 
@@ -147,7 +148,7 @@ class QRCode:
 
         return rImg.convert("1")
 
-    def getAlignmentMarkers(self) -> list[tuple[int, int]]:
+    def getAlignmentMarkers(self) -> List[Tuple[int, int]]:
 
         # Version 1 has no alignment markers
         if self.version == 1:
@@ -331,7 +332,7 @@ class QRCode:
 
         # Change the current pixel position to the next one,
         # accommodating for the mask and vertical timing pattern
-        def moveBit(pos) -> tuple[int, int]:
+        def moveBit(pos) -> Tuple[int, int]:
             rPos = pos
             lim = 1000
 
